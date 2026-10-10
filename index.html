@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Alberto Mario Marsiglia Lara, psicólogo. Acompañamiento psicológico individual y psicología del deporte para clubes y escuelas. Primera cita gratuita.">
+<meta property="og:title" content="Metanoia">
+<meta property="og:description" content="Alberto Mario Marsiglia Lara, psicólogo. Acompañamiento psicológico individual y psicología del deporte para clubes y escuelas. Primera cita gratuita.">
+<link rel="icon" type="image/png" href="escudo-metanoia.png">
+<title>Metanoia</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* Layout: single dark page. Compact hero with headline left and the full logo right, then stacked service sections divided by hairlines. The gold free-appointment block is the one loud element. */
+:root{
+  --bg:#000000;
+  --panel:#0F0E0C;
+  --ink:#F3EFE6;
+  --muted:#A9A397;
+  --gold:#C2A77B;
+  --gold-dim:#6F6046;
+  --line:#2B2822;
+  --on-gold:#0B0A08;
+  --display:"Bebas Neue","Arial Narrow",Impact,sans-serif;
+  --body:"Figtree",system-ui,-apple-system,"Segoe UI",sans-serif;
+  color-scheme:dark;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font:400 1.0625rem/1.65 var(--body);padding-inline:1.25rem;padding-block:0}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.wrap{max-width:1040px;margin-inline:auto}
+h1,h2,h3{font-family:var(--display);font-weight:400;letter-spacing:.015em;line-height:1;margin:0;text-wrap:balance}
+p{margin:0}
+.muted{color:var(--muted)}
+
+header{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.75rem 2rem;padding-block:1.25rem}
+.mark{font:400 1.7rem var(--display);letter-spacing:.12em;text-decoration:none;color:var(--gold)}
+nav{display:flex;flex-wrap:wrap;gap:.25rem 1.75rem}
+nav a{text-decoration:none;color:var(--muted);font-weight:500;font-size:.97rem}
+nav a:hover{color:var(--ink)}
+
+.hero{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:2rem 3rem;align-items:center;padding-block:2rem 3.5rem}
+.hero h1{font-size:clamp(3rem,7.6vw,5.9rem);line-height:.92}
+.hero .lead{margin-top:1.5rem;max-width:35rem;color:var(--muted);font-size:1.13rem}
+.hero img{width:min(100%,290px);height:auto;justify-self:center;display:block}
+.actions{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:1.75rem}
+.btn{display:inline-block;padding:.85rem 1.5rem;background:var(--gold);color:var(--on-gold);font-weight:600;text-decoration:none;border:1px solid var(--gold);border-radius:2px}
+.btn:hover{background:var(--ink);border-color:var(--ink)}
+.btn.ghost{background:transparent;color:var(--ink);border-color:var(--gold-dim)}
+.btn.ghost:hover{border-color:var(--gold);background:transparent}
+
+section{padding-block:4rem;border-top:1px solid var(--line)}
+h2{font-size:clamp(2.2rem,5vw,3.4rem)}
+.intro{max-width:40rem;color:var(--muted);margin-top:1rem}
+h3.sub{font-size:1.7rem;color:var(--gold);margin-bottom:1rem}
+.block+.block{margin-top:2.5rem}
+
+.about{display:grid;grid-template-columns:auto minmax(0,1fr);gap:2rem 3rem;align-items:center}
+.about img{width:190px;height:190px;border-radius:50%;object-fit:cover;object-position:center top;border:2px solid var(--gold-dim);display:block}
+.about p{max-width:38rem}
+.about .who{font:400 1.8rem var(--display);letter-spacing:.06em;color:var(--gold);line-height:1.1}
+.about .role{color:var(--muted);margin-bottom:.9rem;font-size:.97rem}
+
+.two{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:3rem;margin-top:2.5rem}
+.three{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:2.5rem;margin-top:2.5rem}
+.list{margin:0;padding-left:1.15rem;display:grid;gap:.4rem;color:var(--muted)}
+.list li::marker{color:var(--gold-dim)}
+.areas{margin:0;display:grid;gap:1rem}
+.areas dt{font-weight:600}
+.areas dd{margin:.1rem 0 0;color:var(--muted)}
+.steps{margin:0;padding:0;list-style:none;counter-reset:s;display:grid;gap:1rem}
+.steps li{counter-increment:s;display:grid;grid-template-columns:2.2rem minmax(0,1fr);gap:.5rem}
+.steps li::before{content:counter(s);font:400 1.6rem/1.1 var(--display);color:var(--gold)}
+.steps b{font-weight:600}
+.steps span{color:var(--muted)}
+.care{margin-top:2.5rem;padding:1.25rem 1.5rem;border:1px solid var(--line);background:var(--panel);color:var(--muted);font-size:.97rem}
+.care strong{color:var(--ink);font-weight:600}
+.goals{border-top:1px solid var(--line);margin-top:2.5rem;padding-top:2rem}
+
+.free{background:var(--gold);color:var(--on-gold);padding:3rem clamp(1.5rem,5vw,3.5rem)}
+.free h2{font-size:clamp(2.4rem,6vw,4rem)}
+.free p{max-width:40rem;margin-top:1rem;font-size:1.1rem}
+.free .btn{background:var(--on-gold);color:var(--gold);border-color:var(--on-gold);margin-top:1.75rem}
+.free .btn:hover{background:transparent;color:var(--on-gold)}
+
+.pinned{list-style:none;margin:2.25rem 0 0;padding:0;border-top:1px solid var(--line)}
+.pinned li{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:.25rem 1.5rem;align-items:baseline;padding-block:1.15rem;border-bottom:1px solid var(--line)}
+.pinned h3{font-size:1.5rem}
+.pinned span{color:var(--muted);font-size:.95rem}
+.pinned a{color:var(--gold);font-weight:600;text-decoration:none}
+.pinned a:hover{text-decoration:underline}
+
+.contact{display:grid;grid-template-columns:repeat(auto-fit,minmax(14rem,1fr));gap:2rem 2.5rem}
+.contact h3{font-size:1.5rem;color:var(--gold);margin-bottom:.4rem}
+.contact .num{font-weight:600;font-size:1.05rem;overflow-wrap:anywhere}
+.contact a{color:var(--ink)}
+
+footer{border-top:1px solid var(--line);padding-block:2rem 3rem;color:var(--muted);font-size:.9rem;display:grid;gap:.5rem;max-width:46rem}
+
+@media (max-width:820px){
+  .hero{grid-template-columns:minmax(0,1fr);padding-block:1rem 2.5rem}
+  .hero img{width:min(100%,220px);justify-self:start}
+  .about{grid-template-columns:minmax(0,1fr)}
+  .about img{width:150px;height:150px}
+  .two,.three,.contact{grid-template-columns:minmax(0,1fr)}
+  .two{gap:2.5rem}
+  .three{gap:2rem}
+  section{padding-block:3rem}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+body{margin:0}
+img{max-width:100%}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <a class="mark" href="#">METANOIA</a>
+  <nav aria-label="Principal">
+    <a href="#personal">Acompañamiento individual</a>
+    <a href="#deporte">Deporte</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
+</header>
+
+<main>
+<div class="hero">
+  <div>
+    <h1>No necesitas más motivación. Necesitas estructura.</h1>
+    <p class="lead">Ayudo a la transformación de personas sin disciplina en individuos estructurados, enfocados y sólidos. Acompaño procesos individuales; también trabajo con deportistas, entrenadores, familias, clubes, escuelas deportivas.</p>
+    <div class="actions">
+      <a class="btn" href="https://wa.me/573043349631?text=Hola%2C%20quiero%20agendar%20mi%20primera%20cita%20gratuita" target="_blank" rel="noopener">Agendar cita gratuita</a>
+      <a class="btn ghost" href="#personal">Ver servicios</a>
+    </div>
+  </div>
+  <img src="escudo-metanoia.png" alt="Escudo de Metanoia" width="369" height="350">
+</div>
+
+<section class="about" aria-label="Quién soy">
+  <img src="alberto.jpg" alt="Alberto Mario Marsiglia Lara" width="480" height="480">
+  <div>
+    <p class="who">Alberto Mario Marsiglia Lara</p>
+    <p class="role">Psicólogo deportivo · Psicólogo profesional con tarjeta profesional</p>
+    <p>Te ayudo a entender qué está pasando, por qué sucede como sucede y cómo trazar un camino claro. No vengo a imponerte qué hacer ni qué decir: te oriento para que tomes tus propias decisiones, con herramientas basadas en la evidencia y con seguimiento, avanzando paso a paso hacia objetivos que definimos juntos.</p>
+    <p style="margin-top:1rem">Llevo cerca de un año trabajando con clubes y escuelas de fútbol, y mi trabajo se puede aplicar a cualquier deporte. Apoyo a las escuelas, a las familias de los deportistas en formación y a quienes buscan desarrollo personal u orientación vocacional porque aún no saben a qué quieren dedicarse.</p>
+  </div>
+</section>
+
+<section id="personal">
+  <h2>Acompañamiento psicológico individual</h2>
+  <p class="intro">Procesos individuales con seguimiento para deportistas, para madres y padres que buscan apoyo para sus hijos, y para adultos que quieren entender lo que les pasa o definir hacia dónde van. Trabajo lo cognitivo y lo conductual, y lo integro con el deporte que la persona practica.</p>
+  <div class="two">
+    <div>
+      <div class="block">
+        <h3 class="sub">Áreas de acompañamiento</h3>
+        <dl class="areas">
+          <div><dt>Atención, percepción e instrucciones</dt><dd>Orientación en procesos de atención, percepción, aspectos sensoriales y seguimiento de instrucciones, integrada con el deporte que practica la persona.</dd></div>
+          <div><dt>Conducta y hábitos</dt><dd>Patrones que dificultan el bienestar, organización personal, disciplina, responsabilidad y construcción de hábitos.</dd></div>
+          <div><dt>Bienestar emocional</dt><dd>Manejo del estrés, ansiedad cotidiana, frustración, inseguridad, autoestima y reconocimiento de emociones.</dd></div>
+          <div><dt>Desarrollo personal y orientación vocacional</dt><dd>Para quienes no saben a qué quieren dedicarse: aclarar intereses, prioridades y objetivos, y definir los primeros pasos.</dd></div>
+          <div><dt>Relaciones familiares y de pareja</dt><dd>Comunicación, límites, convivencia y resolución de desacuerdos.</dd></div>
+        </dl>
+      </div>
+      <div class="block">
+        <h3 class="sub">Modalidades</h3>
+        <ul class="list">
+          <li>Atención individual mediante cita</li>
+          <li>Presencial o virtual, según disponibilidad y necesidades</li>
+          <li>Sesiones de orientación para situaciones específicas o de seguimiento</li>
+          <li>Proceso de varias sesiones cuando los objetivos lo requieran</li>
+        </ul>
+      </div>
+    </div>
+    <div>
+      <div class="block">
+        <h3 class="sub">Cómo trabajamos</h3>
+        <ol class="steps">
+          <li><div><b>Escucha activa y comprensión.</b> <span>Expresas tu situación sin juicios y aclaramos preocupaciones y contexto.</span></div></li>
+          <li><div><b>Identificación de necesidades y patrones.</b> <span>Reconocemos emociones, pensamientos, conductas y dinámicas relacionadas con la dificultad.</span></div></li>
+          <li><div><b>Definición de objetivos.</b> <span>Acordamos metas realistas y prioridades de trabajo.</span></div></li>
+          <li><div><b>Herramientas y estrategias.</b> <span>Practicamos recursos de regulación emocional, comunicación, solución de problemas y cambio de conducta.</span></div></li>
+          <li><div><b>Seguimiento.</b> <span>Revisamos avances, dificultades y ajustes para sostener los cambios.</span></div></li>
+        </ol>
+      </div>
+      <p class="care"><strong>Enfoque profesional.</strong> El proceso respeta tu autonomía, tu dignidad y tu confidencialidad. No se trata de imponer respuestas, sino de facilitar la comprensión de tu situación y trabajar alternativas concretas. Avanzamos hacia los objetivos que trazamos juntos, que no siempre coinciden con lo que deseas al empezar, porque a veces lo que queremos no es lo que necesitamos. Cada avance se revisa contigo y el plan se ajusta cuando hace falta.</p>
+    </div>
+  </div>
+</section>
+
+<section id="deporte">
+  <h2>Psicología del deporte para clubes y escuelas</h2>
+  <p class="intro">El rendimiento de un jugador no depende solo de lo técnico, lo táctico y lo físico. La preparación psicológica ayuda a formar deportistas con confianza, disciplina, inteligencia emocional y capacidad para afrontar los retos del deporte. Esta propuesta integra ese trabajo al proceso de formación de tu club o escuela, junto a entrenadores y familias.</p>
+
+  <div class="goals">
+    <h3 class="sub">Objetivos</h3>
+    <ul class="list">
+      <li>Potenciar el rendimiento deportivo desde el componente psicológico</li>
+      <li>Favorecer el desarrollo emocional y social de los jugadores</li>
+      <li>Mejorar la disciplina, la atención y el compromiso durante los entrenamientos</li>
+      <li>Fortalecer la comunicación entre entrenadores, jugadores y padres de familia</li>
+      <li>Brindar herramientas para afrontar la competencia, la frustración y la presión deportiva</li>
+    </ul>
+  </div>
+
+  <div class="three">
+    <div>
+      <h3 class="sub">Para los jugadores</h3>
+      <ul class="list">
+        <li>Evaluaciones psicológicas deportivas</li>
+        <li>Entrenamiento de habilidades mentales</li>
+        <li>Intervención individual cuando sea necesaria</li>
+        <li>Observación sistemática durante entrenamientos y partidos</li>
+        <li>Informes periódicos de seguimiento</li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="sub">Para los entrenadores</h3>
+      <ul class="list">
+        <li>Asesoría en manejo de grupo</li>
+        <li>Estrategias para mejorar la motivación y la comunicación</li>
+        <li>Apoyo en situaciones de conducta y convivencia</li>
+        <li>Reuniones de retroalimentación</li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="sub">Para los padres</h3>
+      <ul class="list">
+        <li>Escuela para padres</li>
+        <li>Charlas sobre acompañamiento deportivo</li>
+        <li>Orientación sobre presión, motivación, disciplina, uso de pantallas y desarrollo emocional</li>
+        <li>Espacios de asesoría cuando se requiera</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="two">
+    <div>
+      <div class="block">
+        <h3 class="sub">Modalidades de trabajo</h3>
+        <ul class="list">
+          <li>Presencia semanal en entrenamientos</li>
+          <li>Atención individual mediante cita</li>
+          <li>Talleres grupales</li>
+          <li>Charlas para entrenadores y padres</li>
+          <li>Acompañamiento durante competencias y eventos deportivos</li>
+        </ul>
+      </div>
+      <div class="block">
+        <h3 class="sub">Qué aporta a tu club o escuela</h3>
+        <ul class="list">
+          <li>Acompañamiento integral al deportista</li>
+          <li>Mejor clima deportivo y convivencia</li>
+          <li>Herramientas para manejar los conflictos de conducta</li>
+          <li>Más confianza de las familias en el proceso formativo</li>
+          <li>Seguimiento profesional del desarrollo psicológico de los jugadores</li>
+        </ul>
+      </div>
+    </div>
+    <div>
+      <div class="block">
+        <h3 class="sub">Por qué trabajar conmigo</h3>
+        <ul class="list">
+          <li>Experiencia en procesos de formación deportiva infantil y juvenil</li>
+          <li>Diseño e implementación de programas de evaluación y seguimiento psicológico</li>
+          <li>Elaboración de informes técnicos para entrenadores y familias</li>
+          <li>Trabajo interdisciplinario con cuerpos técnicos</li>
+          <li>Enfoque basado en el desarrollo humano, el rendimiento deportivo y la formación integral del jugador</li>
+        </ul>
+      </div>
+      <div class="actions">
+        <a class="btn" href="https://wa.me/573043349631?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20el%20acompa%C3%B1amiento%20para%20mi%20club%20o%20escuela%20deportiva" target="_blank" rel="noopener">Escríbeme para tu club o escuela</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="free" id="cita">
+  <h2>Primera cita gratuita</h2>
+  <p>Un primer encuentro para conocernos, entender qué necesitas y definir cómo puedo acompañarte. Te cuento cómo trabajo y, si hay un proceso por delante, trazamos objetivos claros con seguimiento y apoyo profesional para revisarlos juntos.</p>
+  <a class="btn" href="https://wa.me/573043349631?text=Hola%2C%20quiero%20agendar%20mi%20primera%20cita%20gratuita" target="_blank" rel="noopener">Agendar cita gratuita</a>
+</div>
+
+<section id="contacto">
+  <h2>Contacto</h2>
+  <div class="contact" style="margin-top:2rem">
+    <div>
+      <h3>WhatsApp</h3>
+      <p class="num"><a href="https://wa.me/573043349631" target="_blank" rel="noopener">+57 304 334 9631</a></p>
+    </div>
+    <div>
+      <h3>Correo</h3>
+      <p class="num">metanoia.oficial.col@gmail.com</p>
+    </div>
+    <div>
+      <h3>Instagram</h3>
+      <p class="num"><a href="https://www.instagram.com/elpsicristiano/" target="_blank" rel="noopener">@elpsicristiano</a></p>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <p>El acompañamiento no incluye diagnóstico clínico de trastornos ni reemplaza la atención de psiquiatría, neurología u otras especialidades. Cuando tu situación lo requiera, te oriento hacia el profesional pertinente.</p>
+  <p>En una situación de riesgo inmediato, acude a los servicios de urgencias o a la red local de atención.</p>
+  <p>© 2026 Metanoia</p>
+</footer>
+</div>
+</body>
+</html>
